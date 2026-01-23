@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-</head>
-<body>
-    <h1>
-        Weather app
-    </h1>
-    <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/index.css" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <title>My weather application</title>
+  </head>
+  <body>
+    <header class="body">
+      <header>
+        <form id="form">
+          <input
+            type="search"
+            id="input-form"
+            placeholder="Enter a city.."
+            required
+          />
+          <input type="submit" value="Search" class="go" />
+        </form>
+        <hr />
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <span id="day"> Saturday &nbsp;<strong>15:32</strong></span>
+            <h2>Johannesburg</h2>
+            <h1>31°☀️</h1>
+            <span class="weather"><small>Feels like 35°</small></span>
+            <span class="text">
+              No rain <br />
+              Humidity: 45%
+              <br />
+              Wind:8km/h
+            </span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p class="links">
+          <small
+            >This project was coded by
+            <a href="#" target="_blank">Khaarendiwe</a> and is
+            <a href="https://github.com/khaare/SheCodes" target="_blank">
+              on GitHub</a
+            >
+            and
+            <a
+              href="https://gleaming-custard-0ca914.netlify.app/"
+              target="_blank"
+              >hosted on Netlify</a
+            ></small
+          >
+        </p>
+        <hr />
+      </footer>
+    </header>
+    <script src="index.js"></script>
+  </body>
 </html>
