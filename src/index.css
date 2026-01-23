@@ -93,3 +93,30 @@ hr {
   text-align: center;
   flex-direction: column; /* Stack links if necessary */
 }
+.current-weather {
+  display: flex;
+  justify-content: center; 
+  gap: 600px;               
+  margin-top: 20px;
+}
+
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+}
+
+.right {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.8;
+  
+}
+#weather-icon {
+  width: 70px;
+  height: 70px;
+  vertical-align: middle;
+}
+

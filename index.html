@@ -23,17 +23,22 @@
       </header>
       <main>
         <div class="current-weather">
-          <div>
+          <div class = "left">
             <span id="day"> Saturday &nbsp;<strong>15:32</strong></span>
-            <h2>Johannesburg</h2>
-            <h1>31°☀️</h1>
-            <span class="weather"><small>Feels like 35°</small></span>
-            <span class="text">
-              No rain <br />
-              Humidity: 45%
+            <h2>City</h2>
+            <h1 class="tempr">
+                <span class="temp-value">...</span>°
+                <span class="temp-icon"><img id="weather-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYo2wP2PjcnTZ2PGNz25XhaV-PQgGEZC3cuD1klihnSA&s" alt="weather icon" /></span>
+            </h1>
+
+            <span class="weather"><small></small></span>
+          </div >
+          <div class = "right">
+            <span class="rain">
+              ...<br /></span>,
+              <span class="humidity">Humidity ...% </span>
               <br />
-              Wind:8km/h
-            </span>
+             <span class="wind"> Windspeed: ...</span>
           </div>
         </div>
       </main>

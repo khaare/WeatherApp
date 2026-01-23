@@ -25,18 +25,35 @@ let selectedCountry = "";
 function showCountry(event) {
   event.preventDefault();
   let count = document.querySelector("#input-form");
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${count.value}`;
   selectedCountry = count.value;
-  //console.log("Inside function:", selectedCountry);
+  console.log("Inside function:", selectedCountry);
 }
 
 document.querySelector("#form").addEventListener("submit", showCountry);
 
 function getWeather(response) {
   let c = Math.round(response.data.temperature.current);
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${c}° ☀️`;
+  let h1 = document.querySelector(".temp-value");
+  let icon = document.querySelector("#weather-icon");
+  let h2 = document.querySelector("h2");
+  let rain = document.querySelector(".rain");
+  let humidity = document.querySelector(".humidity");
+  let windspeed = document.querySelector(".wind");
+  let feels = document.querySelector(".weather");
+  h1.innerHTML = `${c}`;
+  h2.innerHTML = response.data.city;
+  let rai = response.data.condition.description;
+  let humid = response.data.temperature.humidity;
+  let winds = response.data.wind.speed;
+  let feel= response.data.temperature.feels_like;
+  rain.innerHTML = `${rai}`;
+  humidity.innerHTML = `Humidity: ${humid}%`;
+  windspeed.innerHTML = `Windspeed: ${winds} km/h`;
+  feels.innerHTML = `Feels like ${Math.round(feel)}°`;
+
+  icon.src = response.data.condition.icon_url;
+  icon.alt = response.data.condition.description;
+  console.log(response.data);
 }
 
 function showValueOutside() {
