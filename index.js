@@ -64,3 +64,21 @@ function showValueOutside() {
 }
 
 document.querySelector("#form").addEventListener("submit", showValueOutside);
+
+function displayForecast(){
+  let days = ["Sun","Mon","Tue","Wed","Thurs"];
+  let loop = "";
+  days.forEach(function (day){
+    loop= loop+`<div class="forecast-day">
+                    <div class = "forecast-date">${day}</div>
+                    <div class = "forecast-icon">🌞</div>
+                    <div class="forecast-temp">
+                        <div class = "forecast-tempHigh">19°</div>
+                        <div class = "forecast-tempLow">14°</div>
+                    </div>
+                </div>`;
+  });
+  let forecast_ = document.querySelector("#foreCast");
+  forecast_.innerHTML=loop;
+}
+displayForecast();

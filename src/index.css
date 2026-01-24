@@ -1,12 +1,10 @@
 .body {
-  display: block;
-  margin: 0 auto;
-  background-color: rgb(224, 224, 224);
-  margin-top: 10%;
-  padding-top: 15px;
-  border-radius: 10px;
-  width: auto;
-  box-shadow: 10px 10px 5px rgb(169, 189, 196);
+    background: rgba(216, 209, 209, 0.575);
+  max-width: 600px;
+  margin: 45px auto;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  border-radius: 16px;
+  padding: 30px;
 }
 form {
   text-align: center;
@@ -43,6 +41,9 @@ h1 {
   font-weight: bolder;
   margin-top: -30px;
   margin-bottom: -18px;
+}
+main {
+  padding: 30px 0;
 }
 h1,
 h2 {
@@ -96,7 +97,7 @@ hr {
 .current-weather {
   display: flex;
   justify-content: center; 
-  gap: 600px;               
+  gap: 150px;               
   margin-top: 20px;
 }
 
@@ -105,6 +106,7 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 260px;
   
 }
 
@@ -112,6 +114,7 @@ hr {
   text-align: left;
   font-size: 14px;
   line-height: 1.8;
+  min-width: 160px;
   
 }
 #weather-icon {
@@ -120,3 +123,42 @@ hr {
   vertical-align: middle;
 }
 
+.forecast-date{
+    text-align: center;
+    font-weight: bolder;
+    color: rgba(150, 21, 21, 0.92);
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.forecast-icon{
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.forecast-tempHigh{
+    text-align: center;
+    font-weight: bold;
+    color: rgb(62, 2, 2);
+    padding: 10px;
+}
+.forecast-tempLow{
+    text-align: center;
+    padding: 10px;
+    opacity: 1px;
+}
+.forecast-temp{
+    display: flex;
+    justify-content: center;
+}
+.forecast{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    
+}
+.forecast-day{
+    border: 10px solid rgba(65, 50, 100, 0.08);
+    border-radius: 10px;
+    background-color: aliceblue;
+}
