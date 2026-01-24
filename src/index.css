@@ -77,6 +77,7 @@ hr {
   top: -116px;
   width: 94%;
 }
+
 #day {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
@@ -115,6 +116,8 @@ hr {
   font-size: 14px;
   line-height: 1.8;
   min-width: 160px;
+  margin-top: 80px;
+  
   
 }
 #weather-icon {
@@ -132,9 +135,9 @@ hr {
     margin-bottom: 10px;
 }
 .forecast-icon{
-    font-size: 38px;
-    text-align: center;
-    margin-bottom: 10px;
+    width: 50px;
+    display: block;
+    margin: 0 auto;
 }
 .forecast-tempHigh{
     text-align: center;
@@ -155,10 +158,11 @@ hr {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
+    border-bottom: 2px solid rgba(22, 15, 1, 0.966);
     
 }
 .forecast-day{
     border: 10px solid rgba(65, 50, 100, 0.08);
     border-radius: 10px;
-    background-color: aliceblue;
+    
 }

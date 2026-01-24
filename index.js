@@ -18,6 +18,21 @@ function formatDate(date) {
   //console.log(final);
   return final;
 }
+function formatDay(times){
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let dd = new Date(times*1000);
+  let day = dd.getDay();
+  day = days[day];
+  return day;
+}
 //formateDate(new Date());
 let currentTime = document.querySelector("#day");
 currentTime.textContent = formatDate(new Date());
@@ -69,18 +84,19 @@ document.querySelector("#form").addEventListener("submit", showValueOutside);
 function displayForecast(response){
   console.log(response.data);
   
-  let days = ["Sun","Mon","Tue","Wed","Thurs"];
   let loop = "";
-  days.forEach(function (day){
+  response.data.daily.forEach(function (day,index){
+    if (index>0 && index<6){
     loop= loop+`<div class="forecast-day">
-                    <div class = "forecast-date">${day}</div>
-                    <div class = "forecast-icon">🌞</div>
+                    <div class = "forecast-date">${formatDay(day.time)}</div>
+                    <img src = "${day.condition.icon_url}" class = "forecast-icon"/>
                     <div class="forecast-temp">
-                        <div class = "forecast-tempHigh">19°</div>
-                        <div class = "forecast-tempLow">14°</div>
+                        <div class = "forecast-tempHigh">${Math.round(day.temperature.maximum)}°</div>
+                        <div class = "forecast-tempLow">${Math.round(day.temperature.minimum)}°</div>
                     </div>
-                </div>`;
-  });
+                </div>`;}
+    });
+
   let forecast_ = document.querySelector("#foreCast");
   forecast_.innerHTML=loop;
 }
@@ -92,4 +108,10 @@ function getForecast(city){
   //console.log(url);
 }
 
+function getCity(city){
+  let apiKey = "fo02406b8c2c0726534b217586ta4b4a";
+  let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  axios(url).then(getWeather);
+}
+getCity("Durban");
 getForecast("Durban");
