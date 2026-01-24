@@ -54,6 +54,7 @@ function getWeather(response) {
   icon.src = response.data.condition.icon_url;
   icon.alt = response.data.condition.description;
   console.log(response.data);
+  getForecast(response.data.city);
 }
 
 function showValueOutside() {
@@ -65,7 +66,9 @@ function showValueOutside() {
 
 document.querySelector("#form").addEventListener("submit", showValueOutside);
 
-function displayForecast(){
+function displayForecast(response){
+  console.log(response.data);
+  
   let days = ["Sun","Mon","Tue","Wed","Thurs"];
   let loop = "";
   days.forEach(function (day){
@@ -81,4 +84,12 @@ function displayForecast(){
   let forecast_ = document.querySelector("#foreCast");
   forecast_.innerHTML=loop;
 }
-displayForecast();
+
+function getForecast(city){
+  let apiKey = "fo02406b8c2c0726534b217586ta4b4a";
+  let url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios(url).then(displayForecast);
+  //console.log(url);
+}
+
+getForecast("Durban");
